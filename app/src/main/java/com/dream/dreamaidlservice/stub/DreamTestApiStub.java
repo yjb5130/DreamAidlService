@@ -9,6 +9,7 @@ public class DreamTestApiStub extends IDreamTestAidl.Stub {
     private int mAidlInt = 0;
     private byte mAidlByte = 0;
     private String mAidlString = null;
+    private byte[] mAidlBytes = new byte[64];
 
     @Override
     public int getAidlIntValue() throws RemoteException {
@@ -38,5 +39,15 @@ public class DreamTestApiStub extends IDreamTestAidl.Stub {
     @Override
     public void setAidlString(String string) throws RemoteException {
         mAidlString = string;
+    }
+
+    @Override
+    public byte[] getAidlBytes() throws RemoteException {
+        return mAidlBytes;
+    }
+
+    @Override
+    public void setAidlBytes(byte[] value) throws RemoteException {
+        mAidlBytes = value;
     }
 }
