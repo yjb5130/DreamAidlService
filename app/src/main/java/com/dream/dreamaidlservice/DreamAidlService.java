@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.dream.dreamaidlservice.stub.DreamSDKManagerStub;
+import com.dream.platform.DreamSDKManagerStub;
 
 public class DreamAidlService extends Service {
 

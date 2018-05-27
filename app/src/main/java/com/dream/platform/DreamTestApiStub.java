@@ -1,15 +1,16 @@
-package com.dream.dreamaidlservice.stub;
+package com.dream.platform;
 
 import android.os.RemoteException;
 
-import com.dream.platform.IDreamTestAidl;
+import com.dream.platform.parcel.EntityBaseParcel;
 
 public class DreamTestApiStub extends IDreamTestAidl.Stub {
 
     private int mAidlInt = 0;
     private byte mAidlByte = 0;
     private String mAidlString = null;
-    private byte[] mAidlBytes = new byte[64];
+    private byte[] mAidlBytes = null;
+    private EntityBaseParcel mAidlBaseItem = null;
 
     @Override
     public int getAidlIntValue() throws RemoteException {
@@ -49,5 +50,15 @@ public class DreamTestApiStub extends IDreamTestAidl.Stub {
     @Override
     public void setAidlBytes(byte[] value) throws RemoteException {
         mAidlBytes = value;
+    }
+
+    @Override
+    public EntityBaseParcel getBaseParcel() throws RemoteException {
+        return mAidlBaseItem;
+    }
+
+    @Override
+    public void setBaseParcel(EntityBaseParcel item) throws RemoteException {
+        mAidlBaseItem = item;
     }
 }

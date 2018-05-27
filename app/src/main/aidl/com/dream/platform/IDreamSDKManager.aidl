@@ -1,4 +1,4 @@
-// IDreamManager.aidl
+// IDreamSDKManager.aidl
 package com.dream.platform;
 
 import com.dream.platform.IDreamTestAidl;
