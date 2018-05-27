@@ -1,7 +1,10 @@
-package com.dream.platform;
+package com.dream.platform.stub;
 
 import android.content.Context;
 import android.os.RemoteException;
+
+import com.dream.platform.IDreamSDKManager;
+import com.dream.platform.IDreamTestAidl;
 
 public class DreamSDKManagerStub extends IDreamSDKManager.Stub {
 

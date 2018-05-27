@@ -1,7 +1,8 @@
-package com.dream.platform;
+package com.dream.platform.stub;
 
 import android.os.RemoteException;
 
+import com.dream.platform.IDreamTestAidl;
 import com.dream.platform.parcel.EntityBaseParcel;
 
 public class DreamTestApiStub extends IDreamTestAidl.Stub {
