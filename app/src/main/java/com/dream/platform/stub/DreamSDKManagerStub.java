@@ -8,6 +8,7 @@ import android.util.Log;
 import com.dream.platform.IDreamCallbackListener;
 import com.dream.platform.IDreamSDKManager;
 import com.dream.platform.IDreamTestAidl;
+import com.dream.platform.parcel.EntityBaseEvent;
 
 public class DreamSDKManagerStub extends IDreamSDKManager.Stub {
 
@@ -28,6 +29,18 @@ public class DreamSDKManagerStub extends IDreamSDKManager.Stub {
             try {
                 mCallback.getBroadcastItem(i).notifyMessage(status);
                 Log.d(TAG, "packageName: " + mCallback.getBroadcastItem(i).toString());
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+        mCallback.finishBroadcast();
+    }
+
+    public void doCallbackMessage(EntityBaseEvent event) {
+        final int N = mCallback.beginBroadcast();
+        for (int i = 0; i < N; i++) {
+            try {
+                mCallback.getBroadcastItem(i).notifySystemEvent(event);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

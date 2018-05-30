@@ -3,6 +3,7 @@ package com.dream.platform.stub;
 import android.os.RemoteException;
 
 import com.dream.platform.IDreamTestAidl;
+import com.dream.platform.parcel.EntityBaseEvent;
 import com.dream.platform.parcel.EntityBaseParcel;
 
 public class DreamTestApiStub extends IDreamTestAidl.Stub {
@@ -29,6 +30,11 @@ public class DreamTestApiStub extends IDreamTestAidl.Stub {
         mAidlInt = value;
         if (mSdkManager != null) {
             mSdkManager.doCallbackListener(1);
+            EntityBaseEvent event = new EntityBaseEvent();
+            event.msgID = 1;
+            event.info = "setAidlIntValue";
+            event.error = "null";
+            mSdkManager.doCallbackMessage(event);
         }
     }
 
